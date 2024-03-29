@@ -1,0 +1,78 @@
+@import url("https://use.typekit.net/anp1iqw.css");
+html, body {
+  font-family: "ff-good-web-pro", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #020202;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 0;
+}
+header nav {
+  padding: 30px 80px;
+}
+header nav #header-logo {
+  width: 100%;
+  height: 100%;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.hero {
+  background-size: cover;
+  aspect-ratio: 16/9;
+  padding: 60px 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+}
+.hero:before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+}
+.hero--inner {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+.hero--inner h1 {
+  font-family: "ff-good-headline-web-pro", sans-serif;
+  color: #ffffff;
+  font-size: 128px;
+  font-weight: 900;
+  margin-bottom: 0;
+  position: relative;
+}
+.hero--inner h1:after {
+  content: "";
+  background: linear-gradient(90deg, #ffffff 55%, 0, transparent 60%, 0, #ffffff 70%, 0, transparent 75%, 0, #ffffff 85%, 0, transparent 90%, 0, #ffffff);
+  display: block;
+  width: 25%;
+  height: 1px;
+  opacity: 0.7;
+}
+.hero--inner .subhead {
+  color: #ffffff;
+  font-family: ff-good-headline-web-pro-ext, sans-serif;
+  font-weight: 200;
+  font-size: 64px;
+  margin-top: 0;
+}
