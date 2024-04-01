@@ -312,13 +312,12 @@ header nav .nav-right {
 @media (max-width: 992px) {
   #sticky-cta {
     padding: 0 40px;
+    bottom: -30px;
   }
 }
 @media (max-width: 600px) {
   #sticky-cta {
     padding: 0 10px;
-    bottom: -120px;
-    top: 100%;
   }
 }
 #sticky-cta.stuck {

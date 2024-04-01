@@ -53,11 +53,11 @@
     z-index: 2;
     @include md {
         padding: 0 40px;
+        bottom: -30px;
+
     }
     @include vs {
         padding: 0 10px;
-        bottom: -120px;
-        top: 100%;
     }
 
     &.stuck {
