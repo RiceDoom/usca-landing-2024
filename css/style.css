@@ -419,3 +419,8 @@ footer .copyright {
   margin-bottom: 0;
   font-size: 0.8rem;
 }
+@media (max-width: 600px) {
+  footer .copyright a {
+    display: block;
+  }
+}
