@@ -50,6 +50,21 @@ footer {
         }
     }
 
+    .btn-group {
+        @include vs {
+            flex-direction: column;
+        }
+
+        .btn {
+            font-size: 1.3rem;
+
+            @include vs {
+                padding: 15px 25px;
+
+            }
+        }
+    }
+
     .copyright {
         border-top: 1px solid rgba($sky, .3);
         margin-top: 120px;
@@ -59,7 +74,4 @@ footer {
         font-size: .8rem;
     }
 
-    .btn {
-        font-size: 1.3rem;
-    }
 }

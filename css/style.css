@@ -38,7 +38,7 @@ header nav {
 }
 @media (max-width: 992px) {
   header nav {
-    padding: 30px 60px;
+    padding: 30px 40px;
   }
 }
 @media (max-width: 600px) {
@@ -53,6 +53,17 @@ header nav #header-logo {
   min-width: 100px;
   object-fit: contain;
 }
+@media (max-width: 992px) {
+  header nav #header-logo {
+    max-width: 100px;
+  }
+}
+@media (max-width: 600px) {
+  header nav #header-logo {
+    width: 33vw;
+    max-width: 130px;
+  }
+}
 header nav .nav-right {
   text-align: right;
   display: flex;
@@ -60,8 +71,20 @@ header nav .nav-right {
   justify-content: flex-end;
   width: 100%;
 }
+@media (max-width: 992px) {
+  header nav .nav-right .btn {
+    margin: 5px;
+    padding: 10px 20px;
+  }
+}
+@media (max-width: 600px) {
+  header nav .nav-right {
+    display: none;
+  }
+}
 
 .hero {
+  background-image: url("../images/biogeo.png");
   background-size: cover;
   aspect-ratio: 16/9;
   padding: 60px 80px;
@@ -73,13 +96,15 @@ header nav .nav-right {
 }
 @media (max-width: 992px) {
   .hero {
-    padding: 60px 60px;
+    padding: 60px 40px;
     aspect-ratio: 1.5/1;
   }
 }
 @media (max-width: 600px) {
   .hero {
     padding: 60px 20px;
+    aspect-ratio: 1;
+    background-image: url("../images/biogeo-sq.png");
   }
 }
 .hero:before {
@@ -137,11 +162,11 @@ header nav .nav-right {
   background: #002341;
   padding: 60px 80px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 @media (max-width: 992px) {
   .stats-callout {
-    padding: 60px 60px;
+    padding: 60px 40px;
   }
 }
 @media (max-width: 600px) {
@@ -150,9 +175,14 @@ header nav .nav-right {
   }
 }
 .stats-callout--item {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: center;
   margin: 10px auto;
+}
+@media (max-width: 992px) {
+  .stats-callout--item {
+    font-size: 1.4rem;
+  }
 }
 .stats-callout--item-top {
   color: #ff0039;
@@ -161,7 +191,7 @@ header nav .nav-right {
 }
 .stats-callout--item-bottom {
   color: #ffffff;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 .program-section {
@@ -170,7 +200,7 @@ header nav .nav-right {
 }
 @media (max-width: 992px) {
   .program-section {
-    padding: 100px 60px;
+    padding: 100px 40px;
   }
 }
 @media (max-width: 600px) {
@@ -182,7 +212,8 @@ header nav .nav-right {
   background: linear-gradient(90deg, rgba(0, 190, 214, 0.1), rgba(178, 221, 255, 0.3));
 }
 .program-section h2 {
-  font-size: clamp(2rem, 1rem + 3vw, 3rem);
+  font-size: clamp(2.5rem, 1rem + 3vw, 3.5rem);
+  line-height: 1em;
   font-family: "ff-good-headline-web-pro", sans-serif;
   color: #002341;
   margin-bottom: 1.5em;
@@ -269,17 +300,41 @@ header nav .nav-right {
   text-align: right;
   position: sticky;
   bottom: 0;
+  right: 0px;
   padding: 0px 80px;
   height: 0;
   display: block;
   opacity: 1;
+  transform: translateY(0);
+  transition: 0.1s ease-in-out;
+  z-index: 2;
+}
+@media (max-width: 992px) {
+  #sticky-cta {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 600px) {
+  #sticky-cta {
+    padding: 0 10px;
+    bottom: -120px;
+    top: 100%;
+  }
 }
 #sticky-cta.stuck {
   opacity: 0;
+  transition: 0.3s ease-in-out;
 }
 #sticky-cta .btn {
   box-shadow: -3px 2px 8px rgba(2, 2, 2, 0.3), -3px 2px 18px rgba(2, 2, 2, 0.1);
   transform: translateY(calc(-100% - 40px));
+  font-size: 1.3rem;
+}
+@media (max-width: 600px) {
+  #sticky-cta .btn {
+    font-size: 1.1rem;
+    padding: 15px 25px;
+  }
 }
 
 footer {
@@ -332,6 +387,19 @@ footer a {
 footer a:hover {
   color: inherit;
 }
+@media (max-width: 600px) {
+  footer .btn-group {
+    flex-direction: column;
+  }
+}
+footer .btn-group .btn {
+  font-size: 1.3rem;
+}
+@media (max-width: 600px) {
+  footer .btn-group .btn {
+    padding: 15px 25px;
+  }
+}
 footer .copyright {
   border-top: 1px solid rgba(178, 221, 255, 0.3);
   margin-top: 120px;
@@ -339,7 +407,4 @@ footer .copyright {
   text-align: center;
   margin-bottom: 0;
   font-size: 0.8rem;
-}
-footer .btn {
-  font-size: 1.3rem;
 }

@@ -1,4 +1,5 @@
 .hero {
+    background-image: url('../images/biogeo.png');
     background-size: cover;
     aspect-ratio: 16/9;
     padding: 60px 80px;
@@ -8,11 +9,13 @@
     position: relative;
     z-index: 0;
     @include md {
-        padding: 60px 60px;
+        padding: 60px 40px;
         aspect-ratio: 1.5/1;
     }
     @include vs {
         padding: 60px 20px;
+        aspect-ratio: 1;
+        background-image: url('../images/biogeo-sq.png');
     }
 
     &:before {
@@ -76,17 +79,20 @@
     background: $blue;
     padding: 60px 80px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     @include md {
-        padding: 60px 60px;
+        padding: 60px 40px;
     }
     @include vs {
         padding: 60px 20px;
     }
     &--item {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         text-align: center;
         margin: 10px auto;
+        @include md {
+            font-size: 1.4rem;
+        }
         &-top {
             color: $red;
             font-weight: 800;
@@ -94,7 +100,7 @@
         }
         &-bottom {
             color: $white;
-            font-size: .9em;
+            font-size: .8em;
         }
     }
 }
@@ -103,7 +109,7 @@
     padding: 120px 80px;
 
     @include md {
-        padding: 100px 60px;
+        padding: 100px 40px;
     }
     @include vs {
         padding: 80px 20px;
@@ -112,7 +118,8 @@
         background: linear-gradient(90deg, rgba($pool, .1), rgba($sky, .3));
     }
     h2 {
-        font-size: clamp(2rem, calc(1rem + 3vw), 3rem);
+        font-size: clamp(2.5rem, calc(1rem + 3vw), 3.5rem);
+        line-height: 1em;
         font-family: $headline;
         color: $blue;
         margin-bottom: 1.5em;

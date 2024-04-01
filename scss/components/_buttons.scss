@@ -43,16 +43,35 @@
     text-align: right;
     position: sticky;
     bottom: 0;
+    right: 0px;
     padding: 0px 80px;
     height: 0;
     display: block;
     opacity: 1;
+    transform: translateY(0);
+    transition: .1s ease-in-out;
+    z-index: 2;
+    @include md {
+        padding: 0 40px;
+    }
+    @include vs {
+        padding: 0 10px;
+        bottom: -120px;
+        top: 100%;
+    }
 
     &.stuck {
         opacity: 0;
+        transition: .3s ease-in-out ;
     }
     .btn {
         box-shadow: -3px 2px 8px rgba($black, .3), -3px 2px 18px rgba($black, .1);
         transform: translateY(calc(-100% - 40px));
+        font-size: 1.3rem;
+        @include vs {
+            font-size: 1.1rem;
+            padding: 15px 25px;
+
+        }
     }
 }

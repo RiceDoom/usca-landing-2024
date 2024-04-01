@@ -1,6 +1,6 @@
 function checkStickyElementPosition(stickyElementId) {
     var stickyElement = document.getElementById(stickyElementId);
-    var stickyElementOriginalPosition = stickyElement.getBoundingClientRect().top + document.querySelector('footer').offsetHeight/3;
+    var stickyElementOriginalPosition = stickyElement.getBoundingClientRect().top + document.querySelector('footer').offsetHeight/3.5;
 
     window.onscroll = function() {
         if (window.pageYOffset >= stickyElementOriginalPosition) {

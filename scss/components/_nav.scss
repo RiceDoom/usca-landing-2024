@@ -9,8 +9,9 @@ header {
     nav {
         padding: 30px 80px;
         display: flex;
+
         @include md {
-            padding: 30px 60px;
+            padding: 30px 40px;
         }
 
         @include vs {
@@ -23,13 +24,32 @@ header {
             max-width: 200px;
             min-width: 100px;
             object-fit: contain;
+
+            @include md {
+                max-width: 100px;
+            }
+            @include vs {
+                width: 33vw;
+                max-width: 130px;
+            }
         }
+
         .nav-right {
             text-align: right;
             display: flex;
             align-items: center;
             justify-content: flex-end;
             width: 100%;
+
+            @include md {
+                .btn {
+                    margin: 5px;
+                    padding: 10px 20px;
+                }
+            }
+            @include vs {
+                display: none;
+            }
         }
     }
 }
