@@ -67,6 +67,7 @@ header nav .nav-right {
   padding: 60px 80px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   position: relative;
   z-index: 0;
 }
@@ -121,8 +122,18 @@ header nav .nav-right {
   line-height: 1em;
   margin-top: 0;
 }
+.hero .hero-cta {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+  padding: 40px 80px;
+}
 
 .stats-callout {
+  border-top: 5px solid #ff0039;
   background: #002341;
   padding: 60px 80px;
   display: grid;
@@ -168,10 +179,11 @@ header nav .nav-right {
   }
 }
 .program-section.section-secondary {
-  background: rgba(178, 221, 255, 0.3);
+  background: linear-gradient(90deg, rgba(0, 190, 214, 0.1), rgba(178, 221, 255, 0.3));
 }
 .program-section h2 {
   font-size: clamp(2rem, 1rem + 3vw, 3rem);
+  font-family: "ff-good-headline-web-pro", sans-serif;
   color: #002341;
   margin-bottom: 1.5em;
   position: relative;
@@ -180,7 +192,7 @@ header nav .nav-right {
   content: "";
   background: linear-gradient(90deg, #002341 55%, 0, transparent 60%, 0, #002341 70%, 0, transparent 75%, 0, #002341 85%, 0, transparent 90%, 0, #ffffff);
   display: block;
-  width: 10%;
+  width: 8%;
   height: 1px;
   opacity: 0.5;
   position: absolute;
@@ -246,7 +258,86 @@ header nav .nav-right {
 
 .btn-group {
   display: inline-flex;
+  width: 100%;
+  justify-content: center;
 }
 .btn-group .btn {
-  margin-left: 15px;
+  margin: 10px;
+}
+
+#sticky-cta {
+  text-align: right;
+  position: sticky;
+  bottom: 1px;
+  padding: 0px 80px;
+  height: 0;
+}
+#sticky-cta.is-pinned {
+  border: 5px solid green;
+}
+#sticky-cta .btn {
+  box-shadow: -3px 2px 8px rgba(2, 2, 2, 0.3), -3px 2px 18px rgba(2, 2, 2, 0.1);
+  transform: translateY(calc(-100% - 40px));
+}
+
+footer {
+  padding: 60px 80px 0;
+  background: #002341;
+  border-top: 5px solid #ff0039;
+  color: #ffffff;
+  position: relative;
+  display: block;
+}
+@media (max-width: 992px) {
+  footer {
+    padding: 60px 60px 0;
+  }
+}
+@media (max-width: 600px) {
+  footer {
+    padding: 60px 20px 0;
+  }
+}
+footer:before {
+  content: "";
+  background: url("/images/usca_logo_screen.svg") no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+  width: 100%;
+  height: 100%;
+  display: block;
+  aspect-ratio: 1;
+  max-width: 50%;
+  max-height: 90%;
+  position: absolute;
+  right: 0%;
+  bottom: 5%;
+  top: 5%;
+  opacity: 0.03;
+  pointer-events: none;
+}
+footer h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: ff-good-headline-web-pro-ext, sans-serif;
+  font-weight: 100;
+  font-size: clamp(3rem, 1rem + 4vw, 5rem);
+}
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+footer a:hover {
+  color: inherit;
+}
+footer .copyright {
+  border-top: 1px solid rgba(178, 221, 255, 0.3);
+  margin-top: 120px;
+  padding: 15px 20px;
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+footer .btn {
+  font-size: 1.3rem;
 }

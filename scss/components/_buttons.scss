@@ -31,7 +31,26 @@
 
 .btn-group {
     display: inline-flex;
+    width: 100%;
+    justify-content: center;
+
     .btn {
-        margin-left: 15px;
+        margin: 10px;
+    }
+}
+
+#sticky-cta {
+    text-align: right;
+    position: sticky;
+    bottom: 1px;
+    padding: 0px 80px;
+    height: 0;
+
+    &.is-pinned {
+        border: 5px solid green;
+    }
+    .btn {
+        box-shadow: -3px 2px 8px rgba($black, .3), -3px 2px 18px rgba($black, .1);
+        transform: translateY(calc(-100% - 40px));
     }
 }

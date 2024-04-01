@@ -1,0 +1,1 @@
+function checkStickyElementPosition(o){var i=$("#"+o),t=i.offset().top;$(window).scroll((function(){$(window).scrollTop()>=t?i.css("position","sticky"):i.css("position","relative")}))}$(document).ready((function(){checkStickyElementPosition("sticky-cta")}));

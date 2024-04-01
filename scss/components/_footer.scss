@@ -1,0 +1,65 @@
+footer {
+    padding: 60px 80px 0;
+    background: $blue;
+    border-top: 5px solid $red;
+    color: $white;
+    position: relative;
+    display: block;
+
+    @include md {
+        padding: 60px 60px 0;
+    }
+
+    @include vs {
+        padding: 60px 20px 0;
+    }
+
+    &:before {
+        content: '';
+        background: url('/images/usca_logo_screen.svg') no-repeat;
+        background-size: contain;
+        background-position: bottom right;
+        width: 100%;
+        height: 100%;
+        display: block;
+        aspect-ratio: 1;
+        max-width: 50%;
+        max-height: 90%;
+        position: absolute;
+        right: 0%;
+        bottom: 5%;
+        top: 5%;
+        opacity: .03;
+        pointer-events: none;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 1em;
+        font-family: $headline-cond;
+        font-weight: 100;
+        font-size: clamp(3rem, calc(1rem + 4vw), 5rem);
+    }
+
+    a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+
+    .copyright {
+        border-top: 1px solid rgba($sky, .3);
+        margin-top: 120px;
+        padding: 15px 20px;
+        text-align: center;
+        margin-bottom: 0;
+        font-size: .8rem;
+    }
+
+    .btn {
+        font-size: 1.3rem;
+    }
+}
