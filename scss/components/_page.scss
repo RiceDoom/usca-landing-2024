@@ -84,7 +84,7 @@
         padding: 60px 40px;
     }
     @include vs {
-        padding: 60px 20px;
+        padding: 40px 20px;
     }
     &--item {
         font-size: 1.5rem;
@@ -106,13 +106,13 @@
 }
 .program-section {
     background: $white;
-    padding: 120px 80px;
+    padding: 100px 80px;
 
     @include md {
-        padding: 100px 40px;
+        padding: 80px 40px;
     }
     @include vs {
-        padding: 80px 20px;
+        padding: 60px 20px;
     }
     &.section-secondary {
         background: linear-gradient(90deg, rgba($pool, .1), rgba($sky, .3));

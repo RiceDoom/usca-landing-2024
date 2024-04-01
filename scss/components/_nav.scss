@@ -28,6 +28,7 @@ header {
             @include md {
                 max-width: 100px;
             }
+
             @include vs {
                 width: 33vw;
                 max-width: 130px;
@@ -47,8 +48,11 @@ header {
                     padding: 10px 20px;
                 }
             }
+
             @include vs {
+                .btn:not(.btn-apply) {
                 display: none;
+               }
             }
         }
     }

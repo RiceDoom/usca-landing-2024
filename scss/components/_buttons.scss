@@ -57,7 +57,7 @@
 
     }
     @include vs {
-        padding: 0 10px;
+        padding: 0 20px;
     }
 
     &.stuck {
@@ -70,7 +70,7 @@
         font-size: 1.3rem;
         @include vs {
             font-size: 1.1rem;
-            padding: 15px 25px;
+            padding: 10px 20px;
 
         }
     }
