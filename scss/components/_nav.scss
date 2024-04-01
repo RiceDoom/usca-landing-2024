@@ -1,17 +1,35 @@
 header {
     position: absolute;
-    top:0;
-    left:0;
-    right:0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-    height:0;
+    height: 0;
+
     nav {
         padding: 30px 80px;
+        display: flex;
+        @include md {
+            padding: 30px 60px;
+        }
+
+        @include vs {
+            padding: 30px 20px;
+        }
+
         #header-logo {
-            width: 100%;
+            width: 20vw;
             height: 100%;
             max-width: 200px;
+            min-width: 100px;
             object-fit: contain;
+        }
+        .nav-right {
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
         }
     }
 }

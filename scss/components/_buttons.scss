@@ -1,0 +1,37 @@
+.btn {
+    padding: 20px 30px;
+    text-decoration: none;
+    font-weight: 900;
+    font-family: $headline;
+    display: inline-flex;
+    width: auto;
+    height: auto;
+
+    &:after {
+        content: url(/images/arrow-right.svg);
+        width: .7em;
+        height: .5em;
+        object-fit: contain;
+        margin-left: 1ch;
+        transition: .1s ease-in-out;
+    }
+
+    &:hover {
+        &:after {
+            transform: translateX(.8ch);
+            transition: .3s ease-in-out;
+        }
+    }
+
+    &.btn-red {
+        background: $red;
+        color: $white;
+    }
+}
+
+.btn-group {
+    display: inline-flex;
+    .btn {
+        margin-left: 15px;
+    }
+}

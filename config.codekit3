@@ -29,6 +29,16 @@
       "oAP" : "\/favicon.ico",
       "oF" : 0
     },
+    "\/images\/arrow-right.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/images\/arrow-right.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/images\/biogeo.png" : {
       "ft" : 32768,
       "iS" : 1114857,
@@ -110,6 +120,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/scss\/base\/_mixins.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/scss\/base\/_mixins.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/scss\/base\/_variables.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -120,6 +145,21 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/scss\/base\/_variables.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/scss\/components\/_buttons.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/scss\/components\/_buttons.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
