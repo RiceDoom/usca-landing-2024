@@ -1,16 +1,16 @@
 function checkStickyElementPosition(stickyElementId) {
-    var stickyElement = $('#' + stickyElementId);
-    var stickyElementOriginalPosition = stickyElement.offset().top;
+    var stickyElement = document.getElementById(stickyElementId);
+    var stickyElementOriginalPosition = stickyElement.getBoundingClientRect().top + document.querySelector('footer').offsetHeight/3;
 
-    $(window).scroll(function() {
-        if ($(window).scrollTop() >= stickyElementOriginalPosition) {
-            stickyElement.css('position', 'sticky');
+    window.onscroll = function() {
+        if (window.pageYOffset >= stickyElementOriginalPosition) {
+            stickyElement.classList.add('stuck');
         } else {
-            stickyElement.css('position', 'relative');
+            stickyElement.classList.remove('stuck');
         }
-    });
+    };
 }
 
-$(document).ready(function() {
+document.addEventListener('DOMContentLoaded', function() {
     checkStickyElementPosition('sticky-cta');
 });

@@ -240,7 +240,7 @@ header nav .nav-right {
   height: auto;
 }
 .btn:after {
-  content: url(/images/arrow-right.svg);
+  content: url(../images/arrow-right.svg);
   width: 0.7em;
   height: 0.5em;
   object-fit: contain;
@@ -268,12 +268,14 @@ header nav .nav-right {
 #sticky-cta {
   text-align: right;
   position: sticky;
-  bottom: 1px;
+  bottom: 0;
   padding: 0px 80px;
   height: 0;
+  display: block;
+  opacity: 1;
 }
-#sticky-cta.is-pinned {
-  border: 5px solid green;
+#sticky-cta.stuck {
+  opacity: 0;
 }
 #sticky-cta .btn {
   box-shadow: -3px 2px 8px rgba(2, 2, 2, 0.3), -3px 2px 18px rgba(2, 2, 2, 0.1);
@@ -300,7 +302,7 @@ footer {
 }
 footer:before {
   content: "";
-  background: url("/images/usca_logo_screen.svg") no-repeat;
+  background: url("../images/usca_logo_screen.svg") no-repeat;
   background-size: contain;
   background-position: bottom right;
   width: 100%;

@@ -8,7 +8,7 @@
     height: auto;
 
     &:after {
-        content: url(/images/arrow-right.svg);
+        content: url(../images/arrow-right.svg);
         width: .7em;
         height: .5em;
         object-fit: contain;
@@ -42,12 +42,14 @@
 #sticky-cta {
     text-align: right;
     position: sticky;
-    bottom: 1px;
+    bottom: 0;
     padding: 0px 80px;
     height: 0;
+    display: block;
+    opacity: 1;
 
-    &.is-pinned {
-        border: 5px solid green;
+    &.stuck {
+        opacity: 0;
     }
     .btn {
         box-shadow: -3px 2px 8px rgba($black, .3), -3px 2px 18px rgba($black, .1);
