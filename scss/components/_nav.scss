@@ -50,7 +50,7 @@ header {
             }
 
             @include vs {
-                .btn:not(.btn-info) {
+                .btn:not(.btn-apply) {
                 display: none;
                }
             }

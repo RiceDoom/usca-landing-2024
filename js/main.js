@@ -1,8 +1,9 @@
 function checkStickyElementPosition(stickyElementId) {
     const stickyElement = document.getElementById(stickyElementId);
     const footer = document.querySelector('footer');
+    const nav = document.querySelector('nav'); // Add this line to select the navigation element
 
-    // Create an Intersection Observer with a rootMargin of 50px
+    // Create an Intersection Observer with a rootMargin of 10px
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -13,12 +14,13 @@ function checkStickyElementPosition(stickyElementId) {
         });
     }, {
         root: null,
-        rootMargin: '10px',
+        rootMargin: '5px',
         threshold: 0,
     });
 
-    // Observe the footer
+    // Observe both the footer and the navigation
     observer.observe(footer);
+    observer.observe(nav); // Add this line to observe the navigation
 }
 
 document.addEventListener('DOMContentLoaded', function() {
