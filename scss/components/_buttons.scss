@@ -40,38 +40,27 @@
 }
 
 #sticky-cta {
-    text-align: right;
     position: sticky;
-    bottom: 0;
-    right: 0px;
-    padding: 0px 80px;
-    height: 0;
-    display: block;
+    float: right;
+    right: 80px;
+    bottom: 20px;
     opacity: 1;
-    transform: translateY(0);
-    transition: .1s ease-in-out;
     z-index: 2;
+    box-shadow: -3px 2px 8px rgba($black, .3), -3px 2px 18px rgba($black, .1);
+    font-size: 1.3rem;
     @include md {
-        padding: 0 40px;
-        bottom: -30px;
+        right: 40px;
 
     }
+
     @include vs {
-        padding: 0 20px;
+        right: 20px;
+        font-size: 1.1rem;
+        padding: 10px 20px;
     }
 
     &.stuck {
-        opacity: 0;
-        transition: .3s ease-in-out ;
+        display: none;
     }
-    .btn {
-        box-shadow: -3px 2px 8px rgba($black, .3), -3px 2px 18px rgba($black, .1);
-        transform: translateY(calc(-100% - 40px));
-        font-size: 1.3rem;
-        @include vs {
-            font-size: 1.1rem;
-            padding: 10px 20px;
 
-        }
-    }
 }

@@ -1,14 +1,24 @@
 function checkStickyElementPosition(stickyElementId) {
-    var stickyElement = document.getElementById(stickyElementId);
-    var stickyElementOriginalPosition = stickyElement.getBoundingClientRect().top + document.querySelector('footer').offsetHeight/3;
+    const stickyElement = document.getElementById(stickyElementId);
+    const footer = document.querySelector('footer');
 
-    window.onscroll = function() {
-        if (window.pageYOffset >= stickyElementOriginalPosition) {
-            stickyElement.classList.add('stuck');
-        } else {
-            stickyElement.classList.remove('stuck');
-        }
-    };
+    // Create an Intersection Observer with a rootMargin of 50px
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                stickyElement.classList.add('stuck');
+            } else {
+                stickyElement.classList.remove('stuck');
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '10px',
+        threshold: 0,
+    });
+
+    // Observe the footer
+    observer.observe(footer);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
