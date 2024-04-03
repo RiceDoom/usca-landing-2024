@@ -9,6 +9,7 @@ header {
     nav {
         padding: 30px 80px;
         display: flex;
+        filter: drop-shadow(2px 2px 3px rgba($black, .3));
 
         @include md {
             padding: 30px 40px;

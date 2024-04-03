@@ -22,7 +22,7 @@
 
     &:before {
         content: '';
-        background: linear-gradient(110deg, rgba($black, .6), rgba($black, .1));
+        background: linear-gradient(110deg, rgba($black, .7), rgba($black, .1));
         display: block;
         position: absolute;
         top: 0;
@@ -34,7 +34,7 @@
     &--inner {
         position: relative;
         z-index: 1;
-        filter: drop-shadow(2px 2px 3px rgba($black, .4));
+        filter: drop-shadow(2px 2px 3px rgba($black, .3));
 
         h1 {
             @extend %h1;
@@ -48,6 +48,7 @@
                 background: linear-gradient(90deg, $white 55%, 0, transparent 60%, 0, $white 70%, 0, transparent 75%, 0, $white 85%, 0, transparent 90%, 0, $white);
                 display: block;
                 width: 25%;
+                min-width: 3ch;
                 height: 1px;
                 opacity: .5;
                 position: absolute;
@@ -105,13 +106,15 @@
 
         &-top {
             color: $red;
-            font-weight: 800;
+            font-weight: 700;
+            font-size: .9em;
+            font-family: $headline;
             margin-bottom: .3em;
         }
 
         &-bottom {
             color: $white;
-            font-size: .8em;
+            font-size: 1em;
         }
     }
 }
@@ -145,6 +148,7 @@
             background: linear-gradient(90deg, $blue 55%, 0, transparent 60%, 0, $blue 70%, 0, transparent 75%, 0, $blue 85%, 0, transparent 90%, 0, $white);
             display: block;
             width: 8%;
+            min-width: 3ch;
             height: 1px;
             opacity: .5;
             position: absolute;

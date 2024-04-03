@@ -31,15 +31,18 @@ footer {
         top: 5%;
         opacity: .03;
         pointer-events: none;
+
         @include md {
             background-position: center right;
         }
+
         @include vs {
             max-width: 60%;
             background-position: bottom right;
             bottom: 20px;
 
         }
+    
     }
 
     h2 {
@@ -81,6 +84,7 @@ footer {
         text-align: center;
         margin-bottom: 0;
         font-size: .8rem;
+
         @include vs {
             a {
                 display: block;
