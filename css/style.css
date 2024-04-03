@@ -116,7 +116,7 @@ header nav .nav-right {
 }
 .hero:before {
   content: "";
-  background: linear-gradient(110deg, rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.1));
+  background: linear-gradient(110deg, rgba(2, 2, 2, 0.6), rgba(2, 2, 2, 0.1));
   display: block;
   position: absolute;
   top: 0;
@@ -127,7 +127,7 @@ header nav .nav-right {
 .hero--inner {
   position: relative;
   z-index: 1;
-  filter: drop-shadow(2px 2px 3px rgba(2, 2, 2, 0.5));
+  filter: drop-shadow(2px 2px 3px rgba(2, 2, 2, 0.4));
 }
 .hero--inner h1 {
   font-family: "ff-good-headline-web-pro", sans-serif;

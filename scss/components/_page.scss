@@ -22,7 +22,7 @@
 
     &:before {
         content: '';
-        background: linear-gradient(110deg, rgba($black, .7), rgba($black, .1));
+        background: linear-gradient(110deg, rgba($black, .6), rgba($black, .1));
         display: block;
         position: absolute;
         top: 0;
@@ -34,7 +34,7 @@
     &--inner {
         position: relative;
         z-index: 1;
-        filter: drop-shadow(2px 2px 3px rgba($black, .5));
+        filter: drop-shadow(2px 2px 3px rgba($black, .4));
 
         h1 {
             @extend %h1;
