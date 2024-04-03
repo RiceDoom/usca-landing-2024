@@ -13,6 +13,11 @@ body {
   position: relative;
 }
 
+body.modal-on {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 p {
   font-size: 1.2rem;
   line-height: 1.5em;
@@ -84,14 +89,6 @@ header nav .nav-right {
   }
 }
 
-@keyframes slideInForm {
-  0% {
-    transform: translateX(100vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 .hero {
   background-image: url("../images/biogeo.png");
   background-size: cover;
@@ -270,155 +267,6 @@ header nav .nav-right {
   flex-shrink: 0;
 }
 
-.info-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
-  background-color: rgba(0, 35, 65, 0.4);
-  backdrop-filter: blur(18px);
-}
-.info-modal.active {
-  display: block;
-}
-.info-modal.active .info-modal--inner {
-  animation: slideInForm 0.3s ease-in-out;
-}
-.info-modal--inner {
-  background-color: #002341;
-  padding: 60px 40px;
-  width: 100%;
-  max-width: 375px;
-  margin-left: auto;
-  border-left: 5px solid #ff0039;
-  filter: drop-shadow(-5px 0px 18px rgba(2, 2, 2, 0.3));
-}
-@media (max-width: 600px) {
-  .info-modal--inner {
-    padding: 40px 20px;
-    width: calc(100vw - 45px);
-  }
-}
-.info-modal--inner-logo {
-  width: 120px;
-  margin-bottom: 40px;
-  margin-top: -30px;
-}
-@media (max-width: 600px) {
-  .info-modal--inner-logo {
-    margin-top: -10px;
-  }
-}
-.info-modal--inner-close {
-  color: #ffffff;
-  font-size: 3rem;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 20px;
-  font-weight: 900;
-}
-.info-modal--inner-close:hover {
-  cursor: pointer;
-}
-.info-modal--inner h2 {
-  color: #ffffff;
-  font-size: clamp(2rem, 1rem + 3vw, 2.5rem);
-  line-height: 1.1em;
-  margin-bottom: 2em;
-}
-.info-modal--inner .form_page {
-  margin-top: 40px;
-  color: #ffffff;
-  font-family: "ff-good-web-pro", sans-serif;
-  font-size: 16px;
-}
-.info-modal--inner .form_page .form_question {
-  margin-bottom: 2em;
-}
-.info-modal--inner .form_page .form_question.form_address fieldset div.form_label {
-  margin-bottom: 0.5em;
-}
-.info-modal--inner .form_page .form_question.form_address fieldset label.form_label {
-  font-size: 1rem;
-  margin-top: 1em;
-}
-.info-modal--inner .form_page .form_question.form_checkbox div.form_label {
-  font-size: 1rem;
-}
-.info-modal--inner .form_page .form_question.form_checkbox .form_responses .form_response {
-  display: inline-flex;
-  width: 100%;
-}
-.info-modal--inner .form_page .form_question.form_checkbox .form_responses .form_response input[type=checkbox] {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  padding: 10px;
-  background: #ffffff;
-  height: 1rem;
-  width: 1rem;
-}
-.info-modal--inner .form_page .form_question.form_checkbox .form_responses .form_response label {
-  align-items: center;
-  display: flex;
-}
-.info-modal--inner .form_page .form_question .form_label {
-  font-size: clamp(1rem, 1rem + 2vw, 1.3rem);
-  padding-bottom: 0.5em;
-}
-.info-modal--inner .form_page .form_question .form_responses input {
-  padding: 10px;
-  width: 100%;
-}
-.info-modal--inner .form_page .form_question .form_responses select {
-  appearance: none;
-  -webkit-appearance: none;
-  border: none;
-  padding: 10px;
-  background: #ffffff;
-}
-.info-modal--inner .action.form_action {
-  margin-top: 60px;
-}
-.info-modal--inner .action.form_action button {
-  padding: 20px 30px;
-  text-decoration: none;
-  font-weight: 900;
-  font-family: "ff-good-headline-web-pro", sans-serif;
-  display: inline-flex;
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  border: 0;
-  background: #ff0039;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 900;
-}
-.info-modal--inner .action.form_action button:after {
-  content: url(../images/arrow-right.svg);
-  width: 0.7em;
-  height: 0.5em;
-  object-fit: contain;
-  margin-left: auto;
-  padding-left: 1ch;
-  transition: 0.1s ease-in-out;
-}
-.info-modal--inner .action.form_action button:hover {
-  cursor: pointer;
-}
-.info-modal--inner .action.form_action button:hover:after {
-  transform: translateX(0.8ch);
-  transition: 0.3s ease-in-out;
-}
-
 .btn {
   padding: 20px 30px;
   text-decoration: none;
@@ -568,4 +416,177 @@ footer .copyright {
   footer .copyright a {
     display: block;
   }
+}
+
+@keyframes fadeInModal {
+  0% {
+    backdrop-filter: blur(0px);
+    background-color: rgba(0, 35, 65, 0.1);
+  }
+  100% {
+    backdrop-filter: blur(12px);
+    background-color: rgba(0, 35, 65, 0.4);
+  }
+}
+@keyframes slideInForm {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.info-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  backdrop-filter: blur(0px);
+  background-color: rgba(0, 35, 65, 0);
+  animation: fadeInModal 0.2s ease-in-out reverse;
+}
+.info-modal.active {
+  z-index: 999;
+  display: block;
+  backdrop-filter: blur(12px);
+  background-color: rgba(0, 35, 65, 0.4);
+  animation: fadeInModal 0.5s ease-in-out;
+}
+.info-modal.active .info-modal--inner {
+  animation: slideInForm 0.3s ease-in;
+}
+.info-modal--inner {
+  background-color: #002341;
+  padding: 60px 40px;
+  width: 100%;
+  max-width: 375px;
+  margin-left: auto;
+  border-left: 5px solid #ff0039;
+  filter: drop-shadow(-5px 0px 18px rgba(2, 2, 2, 0.3));
+  animation: slideInForm 0.2s ease-in reverse;
+}
+@media (max-width: 600px) {
+  .info-modal--inner {
+    padding: 40px 20px;
+    width: calc(100vw - 45px);
+  }
+}
+.info-modal--inner-logo {
+  width: 120px;
+  margin-bottom: 40px;
+  margin-top: -30px;
+}
+@media (max-width: 600px) {
+  .info-modal--inner-logo {
+    margin-top: -10px;
+  }
+}
+.info-modal--inner-close {
+  color: #ffffff;
+  font-size: 3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  font-weight: 900;
+}
+.info-modal--inner-close:hover {
+  cursor: pointer;
+}
+.info-modal--inner h2 {
+  color: #ffffff;
+  font-size: clamp(2rem, 1rem + 3vw, 2.5rem);
+  line-height: 1.1em;
+  margin-bottom: 2em;
+}
+.info-modal--inner .form_page {
+  margin-top: 40px;
+  color: #ffffff;
+  font-family: "ff-good-web-pro", sans-serif;
+  font-size: 16px;
+}
+.info-modal--inner .form_page .form_question {
+  margin-bottom: 2em;
+}
+.info-modal--inner .form_page .form_question.form_address fieldset div.form_label {
+  margin-bottom: 0.5em;
+}
+.info-modal--inner .form_page .form_question.form_address fieldset label.form_label {
+  font-size: 1rem;
+  margin-top: 1em;
+}
+.info-modal--inner .form_page .form_question.form_checkbox div.form_label {
+  font-size: 1rem;
+}
+.info-modal--inner .form_page .form_question.form_checkbox .form_responses .form_response {
+  display: inline-flex;
+  width: 100%;
+}
+.info-modal--inner .form_page .form_question.form_checkbox .form_responses .form_response input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  padding: 10px;
+  background: #ffffff;
+  height: 1rem;
+  width: 1rem;
+}
+.info-modal--inner .form_page .form_question.form_checkbox .form_responses .form_response label {
+  align-items: center;
+  display: flex;
+}
+.info-modal--inner .form_page .form_question .form_label {
+  font-size: clamp(1rem, 1rem + 2vw, 1.3rem);
+  padding-bottom: 0.5em;
+}
+.info-modal--inner .form_page .form_question .form_responses input {
+  padding: 10px;
+  width: 100%;
+}
+.info-modal--inner .form_page .form_question .form_responses select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  padding: 10px;
+  background: #ffffff;
+}
+.info-modal--inner .action.form_action {
+  margin-top: 60px;
+}
+.info-modal--inner .action.form_action button {
+  padding: 20px 30px;
+  text-decoration: none;
+  font-weight: 900;
+  font-family: "ff-good-headline-web-pro", sans-serif;
+  display: inline-flex;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  border: 0;
+  background: #ff0039;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+.info-modal--inner .action.form_action button:after {
+  content: url(../images/arrow-right.svg);
+  width: 0.7em;
+  height: 0.5em;
+  object-fit: contain;
+  margin-left: auto;
+  padding-left: 1ch;
+  transition: 0.1s ease-in-out;
+}
+.info-modal--inner .action.form_action button:hover {
+  cursor: pointer;
+}
+.info-modal--inner .action.form_action button:hover:after {
+  transform: translateX(0.8ch);
+  transition: 0.3s ease-in-out;
 }

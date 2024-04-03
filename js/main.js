@@ -42,17 +42,23 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function (event) {
             event.preventDefault();
             infoModal.classList.add('active');
+            document.body.classList.add('modal-on');
+
         });
     });
 
     // Hide info modal on inner close button click
     infoModalInnerClose.addEventListener('click', function () {
         infoModal.classList.remove('active');
+        document.body.classList.remove('modal-on');
+
     });
 
     // Hide info modal when clicking outside of it
     infoModal.addEventListener('click', function (event) {
         if (event.target !== this) return;
         infoModal.classList.remove('active');
+        document.body.classList.remove('modal-on');
+
     });
 });

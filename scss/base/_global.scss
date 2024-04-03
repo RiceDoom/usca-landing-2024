@@ -11,7 +11,10 @@ body {
     margin: 0;
     position: relative;
 }
-
+body.modal-on {
+    height: 100vh;
+    overflow-y: hidden;
+}
 p {
     font-size: 1.2rem;
     line-height: 1.5em;
