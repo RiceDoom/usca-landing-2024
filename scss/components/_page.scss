@@ -1,3 +1,13 @@
+@keyframes slideInForm {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
 .hero {
     background-image: url('../images/biogeo.png');
     background-size: cover;
@@ -8,10 +18,12 @@
     flex-wrap: wrap;
     position: relative;
     z-index: 0;
+
     @include md {
         padding: 60px 40px;
         aspect-ratio: 1.5/1;
     }
+
     @include vs {
         padding: 60px 20px;
         aspect-ratio: 1;
@@ -20,7 +32,7 @@
 
     &:before {
         content: '';
-        background: linear-gradient(110deg, rgba($black, .8), rgba($black, .1));
+        background: linear-gradient(110deg, rgba($black, .7), rgba($black, .1));
         display: block;
         position: absolute;
         top: 0;
@@ -38,39 +50,42 @@
             @extend %h1;
             font-family: $headline;
             color: $white;
-            margin-bottom:40px;
+            margin-bottom: 40px;
             position: relative;
+
             &:after {
                 content: '';
                 background: linear-gradient(90deg, $white 55%, 0, transparent 60%, 0, $white 70%, 0, transparent 75%, 0, $white 85%, 0, transparent 90%, 0, $white);
                 display: block;
                 width: 25%;
-                height:1px;
+                height: 1px;
                 opacity: .5;
                 position: absolute;
                 left: 0;
-                bottom:-20px;
+                bottom: -20px;
             }
 
         }
+
         .subhead {
             color: $white;
             font-family: $headline-cond;
             font-weight: 200;
             font-size: clamp(20px, calc(20px + 2vw), 58px);
             line-height: 1em;
-            margin-top:0;
+            margin-top: 0;
 
         }
     }
+
     .hero-cta {
         width: 100%;
         position: absolute;
         z-index: 1;
         bottom: 0;
-        right:0;
+        right: 0;
         text-align: right;
-        padding:40px 80px;
+        padding: 40px 80px;
     }
 }
 
@@ -80,30 +95,37 @@
     padding: 60px 80px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
     @include md {
         padding: 60px 40px;
     }
+
     @include vs {
         padding: 40px 20px;
     }
+
     &--item {
         font-size: 1.5rem;
         text-align: center;
         margin: 10px auto;
+
         @include md {
             font-size: 1.4rem;
         }
+
         &-top {
             color: $red;
             font-weight: 800;
             margin-bottom: .3em;
         }
+
         &-bottom {
             color: $white;
             font-size: .8em;
         }
     }
 }
+
 .program-section {
     background: $white;
     padding: 100px 80px;
@@ -111,12 +133,15 @@
     @include md {
         padding: 80px 40px;
     }
+
     @include vs {
         padding: 60px 20px;
     }
+
     &.section-secondary {
         background: linear-gradient(90deg, rgba($pool, .1), rgba($sky, .3));
     }
+
     h2 {
         font-size: clamp(2.5rem, calc(1rem + 3vw), 3.5rem);
         line-height: 1em;
@@ -124,32 +149,37 @@
         color: $blue;
         margin-bottom: 1.5em;
         position: relative;
+
         &:after {
             content: '';
             background: linear-gradient(90deg, $blue 55%, 0, transparent 60%, 0, $blue 70%, 0, transparent 75%, 0, $blue 85%, 0, transparent 90%, 0, $white);
             display: block;
             width: 8%;
-            height:1px;
+            height: 1px;
             opacity: .5;
             position: absolute;
             left: 0;
-            bottom:-.6em;
+            bottom: -.6em;
         }
     }
+
     ul {
         font-size: 1.3rem;
         columns: 2;
-        padding-left:0;
+        padding-left: 0;
         list-style-type: none;
+
         @include vs {
             columns: 1;
         }
+
         li {
             margin-bottom: 1em;
             line-height: 1.3em;
             position: relative;
             display: inline-flex;
             align-items: center;
+
             &:before {
                 content: '';
                 display: inline-flex;
@@ -159,8 +189,193 @@
                 height: 15px;
                 margin-right: 1.5ch;
                 flex-basis: 15px;
-                flex-grow:0;
+                flex-grow: 0;
                 flex-shrink: 0;
+            }
+        }
+    }
+}
+
+.info-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    background-color: rgba($blue, .4);
+    backdrop-filter: blur(18px);
+
+    &.active {
+        display: block;
+
+        .info-modal--inner {
+            animation: slideInForm .3s ease-in-out;
+        }
+    }
+
+    &--inner {
+        background-color: $blue;
+        padding: 60px 40px;
+        width: 100%;
+        max-width: 375px;
+        margin-left: auto;
+        border-left: 5px solid $red;
+        filter: drop-shadow(-5px 0px 18px rgba($black, .3));
+
+        @include vs {
+            padding: 40px 20px;
+            width: calc(100vw - 45px);
+        }
+
+        &-logo {
+            width: 120px;
+            margin-bottom: 40px;
+            margin-top:-30px;
+            @include vs {
+                margin-top: -10px;
+            }
+        }
+
+        &-close {
+            color: $white;
+            font-size: 3rem;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 20px;
+            font-weight: 900;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        h2 {
+            color: $white;
+            font-size: clamp(2rem, 1rem + 3vw, 2.5rem);
+            line-height: 1.1em;
+            margin-bottom: 2em;
+
+        }
+
+        .form_page {
+            margin-top: 40px;
+            color: $white;
+            font-family: $sans;
+            font-size: 16px;
+
+            .form_question {
+                margin-bottom: 2em;
+
+                &.form_address {
+                    fieldset {
+                        div.form_label {
+                            margin-bottom: .5em;
+                        }
+
+                        label.form_label {
+                            font-size: 1rem;
+                            margin-top: 1em;
+                        }
+                    }
+                }
+
+                &.form_checkbox {
+                    div.form_label {
+                        font-size: 1rem;
+                    }
+
+                    .form_responses {
+                        .form_response {
+                            display: inline-flex;
+                            width: 100%;
+
+                            input[type="checkbox"] {
+                                appearance: none;
+                                -webkit-appearance: none;
+                                border: none;
+                                padding: 10px;
+                                background: $white;
+                                height: 1rem;
+                                width: 1rem;
+                            }
+
+                            label {
+                                align-items: center;
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+
+                .form_label {
+                    font-size: clamp(1rem, 1rem + 2vw, 1.3rem);
+                    padding-bottom: .5em;
+                }
+
+                .form_responses {
+                    input {
+                        padding: 10px;
+                        width: 100%;
+                    }
+
+                    select {
+                        appearance: none;
+                        -webkit-appearance: none;
+                        border: none;
+                        padding: 10px;
+                        background: $white;
+                    }
+                }
+
+
+            }
+
+        }
+
+        .action.form_action {
+            margin-top: 60px;
+
+            button {
+                padding: 20px 30px;
+                text-decoration: none;
+                font-weight: 900;
+                font-family: $headline;
+                display: inline-flex;
+                width: auto;
+                height: auto;
+                border-radius: 0;
+                border: 0;
+                background: $red;
+                color: $white;
+                font-size: 1.1rem;
+                font-weight: 900;
+
+                &:after {
+                    content: url(../images/arrow-right.svg);
+                    width: .7em;
+                    height: .5em;
+                    object-fit: contain;
+                    margin-left: auto;
+                    padding-left: 1ch;
+                    transition: .1s ease-in-out;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    &:after {
+                        transform: translateX(.8ch);
+                        transition: .3s ease-in-out;
+
+                    }
+                }
+
             }
         }
     }

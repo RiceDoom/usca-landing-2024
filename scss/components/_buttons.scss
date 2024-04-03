@@ -12,7 +12,8 @@
         width: .7em;
         height: .5em;
         object-fit: contain;
-        margin-left: 1ch;
+        margin-left: auto;
+        padding-left: 1ch;
         transition: .1s ease-in-out;
     }
 
@@ -20,6 +21,7 @@
         &:after {
             transform: translateX(.8ch);
             transition: .3s ease-in-out;
+
         }
     }
 
@@ -48,6 +50,7 @@
     z-index: 2;
     box-shadow: -3px 2px 8px rgba($black, .3), -3px 2px 18px rgba($black, .1);
     font-size: 1.3rem;
+
     @include md {
         right: 40px;
 
