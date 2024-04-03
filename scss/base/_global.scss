@@ -28,8 +28,7 @@ h1 {
 }
 
 %h1 {
-    // font-size: 128px;
-    font-size: clamp(60px, calc( 32px + 6vw), 128px);
+    font-size: clamp(68px, calc( 32px + 6vw), 128px);
     font-weight: 900;
     line-height: .85em;
 }

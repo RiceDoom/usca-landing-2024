@@ -34,7 +34,7 @@
     &--inner {
         position: relative;
         z-index: 1;
-        mix-blend-mode: screen;
+        filter: drop-shadow(2px 2px 3px rgba($black, .5));
 
         h1 {
             @extend %h1;
