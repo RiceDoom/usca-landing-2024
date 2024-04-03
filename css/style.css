@@ -85,7 +85,7 @@ header nav .nav-right {
   }
 }
 @media (max-width: 600px) {
-  header nav .nav-right .btn:not(.btn-apply) {
+  header nav .nav-right .btn:not(.btn-info) {
     display: none;
   }
 }

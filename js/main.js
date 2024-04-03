@@ -3,7 +3,7 @@ function checkStickyElementPosition(stickyElementId) {
     const footer = document.querySelector('footer');
     const nav = document.querySelector('nav'); // Added this line to select the navigation element
 
-    // Create an Intersection Observer with a rootMargin of 10px
+    // Create an Intersection Observer with a rootMargin of  number of px
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -14,7 +14,7 @@ function checkStickyElementPosition(stickyElementId) {
         });
     }, {
         root: null,
-        rootMargin: '-50px',
+        rootMargin: '-200px 0px -50px',
         threshold: 0
     });
 
@@ -25,11 +25,15 @@ function checkStickyElementPosition(stickyElementId) {
     // Check initial position on document load
     if (footer.getBoundingClientRect().top <= window.innerHeight) {
         stickyElement.classList.add('stuck');
-    } 
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
+    window.scrollTo(0, 0);
     checkStickyElementPosition('sticky-cta');
 });
+
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
