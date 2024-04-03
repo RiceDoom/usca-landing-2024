@@ -14,7 +14,7 @@ function checkStickyElementPosition(stickyElementId) {
         });
     }, {
         root: null,
-        rootMargin: '5px',
+        rootMargin: '-50px',
         threshold: 0
     });
 
@@ -25,8 +25,7 @@ function checkStickyElementPosition(stickyElementId) {
     // Check initial position on document load
     if (footer.getBoundingClientRect().top <= window.innerHeight) {
         stickyElement.classList.add('stuck');
-    }
-}
+    } 
 
 document.addEventListener('DOMContentLoaded', function () {
     checkStickyElementPosition('sticky-cta');
