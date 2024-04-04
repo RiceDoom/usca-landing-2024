@@ -94,7 +94,6 @@ header nav .nav-right {
 }
 
 .hero {
-  background-image: url("../images/biogeo.png");
   background-color: #002341;
   background-size: cover;
   aspect-ratio: 16/9;
@@ -115,13 +114,24 @@ header nav .nav-right {
   .hero {
     padding: 60px 20px;
     aspect-ratio: 1;
-    background-image: url("../images/biogeo-sq.png");
   }
 }
 .hero:before {
   content: "";
   background: linear-gradient(110deg, rgba(2, 2, 2, 0.7), rgba(2, 2, 2, 0.1));
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.hero--image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
@@ -138,6 +148,8 @@ header nav .nav-right {
   color: #ffffff;
   margin-bottom: 40px;
   position: relative;
+  width: 100%;
+  max-width: 1200px;
 }
 .hero--inner h1:after {
   content: "";
@@ -158,6 +170,8 @@ header nav .nav-right {
   font-size: clamp(20px, 20px + 2vw, 58px);
   line-height: 1em;
   margin-top: 0;
+  width: 100%;
+  max-width: 1200px;
 }
 .hero .hero-cta {
   width: 100%;
@@ -288,6 +302,8 @@ header nav .nav-right {
   flex-basis: 15px;
   flex-grow: 0;
   flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 0.5ch;
 }
 
 .btn {

@@ -9,6 +9,14 @@
   ],
   "creatorBuild" : "34564",
   "files" : {
+    "\/computer-information-science.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/computer-information-science.html",
+      "oF" : 0
+    },
     "\/css\/style.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -78,6 +86,45 @@
       "q" : 90,
       "rq" : 75
     },
+    "\/images\/engineering-og.png" : {
+      "ft" : 32768,
+      "iS" : 966765,
+      "oA" : 0,
+      "oAP" : "\/images\/engineering-og.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/images\/engineering-sq.png" : {
+      "ft" : 32768,
+      "iS" : 470687,
+      "oA" : 0,
+      "oAP" : "\/images\/engineering-sq.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/images\/engineering.png" : {
+      "ft" : 32768,
+      "iS" : 971823,
+      "oA" : 0,
+      "oAP" : "\/images\/engineering.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/images\/home-banner-students-mid.jpg" : {
       "ft" : 16384,
       "iS" : 606415,
@@ -121,14 +168,6 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/index.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/index.html",
-      "oF" : 0
-    },
     "\/js\/main-min.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -150,6 +189,14 @@
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
+    },
+    "\/public-health.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/public-health.html",
+      "oF" : 0
     },
     "\/scss\/base\/_fonts.scss" : {
       "aP" : 1,
@@ -300,6 +347,14 @@
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
+    },
+    "\/software-engineering.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/software-engineering.html",
+      "oF" : 0
     }
   },
   "hooks" : [
