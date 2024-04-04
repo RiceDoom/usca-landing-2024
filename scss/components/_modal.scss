@@ -49,13 +49,23 @@
         width: 100%;
         max-width: 375px;
         margin-left: auto;
-        border-left: 5px solid $red;
-        filter: drop-shadow(-5px 0px 18px rgba($black, .3));
+        filter: drop-shadow(-3px 0px 3px rgba($black, .3));
         animation: slideInForm .2s ease-in reverse;
+        position: relative;
 
         @include vs {
             padding: 40px 20px;
             width: calc(100vw - 45px);
+        }
+        &:before {
+            content: '';
+            height: 100%;
+            width: 5px;
+            background-color: $red;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left: -10px;
         }
 
         &-logo {

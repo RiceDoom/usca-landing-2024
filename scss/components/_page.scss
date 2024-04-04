@@ -81,11 +81,12 @@
 }
 
 .stats-callout {
-    border-top: 5px solid $red;
     background: $blue;
     padding: 60px 80px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    position: relative;
+    filter: drop-shadow(0 -2px 2px rgba($black, .3));
 
     @include md {
         padding: 60px 40px;
@@ -93,6 +94,16 @@
 
     @include vs {
         padding: 40px 20px;
+    }
+
+    &:before {
+        content: '';
+        height: 5px;
+        width: 100%;
+        background-color: $red;
+        display: block;
+        position: absolute;
+        top: -7px;
     }
 
     &--item {
@@ -189,4 +200,3 @@
         }
     }
 }
-
