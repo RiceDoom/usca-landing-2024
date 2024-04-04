@@ -1,10 +1,22 @@
 footer {
     padding: 60px 80px 0;
     background: $blue;
-    border-top: 5px solid $red;
     color: $white;
     position: relative;
     display: block;
+    filter: drop-shadow(0 -2px 2px rgba($black, .3));
+
+    &:before {
+        content: '';
+        height: 5px;
+        width: 100%;
+        background-color: $red;
+        display: block;
+        position: absolute;
+        top: -7px;
+        left:0;
+        right:0;
+    }
 
     @include md {
         padding: 60px 60px 0;
@@ -14,7 +26,7 @@ footer {
         padding: 60px 20px 0;
     }
 
-    &:before {
+    &:after {
         content: '';
         background: url('../images/usca_logo_screen.svg') no-repeat;
         background-size: contain;
